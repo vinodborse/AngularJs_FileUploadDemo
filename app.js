@@ -29,8 +29,9 @@ app.controller('MyCtrl', ['$q','$http','$scope', 'Upload', '$timeout', function 
 		url =  "https://angular-file-upload-cors-srv.appspot.com/upload" // add your server url 
 		data =  {username: $scope.username, file: file};
 		$http({method: 'POST', url:url, data:data}).then(function successCallback(response) {
-            //console.log(response.data);
-            deferred.resolve(response.data);
+       	    //console.log(response.data);
+		alert("File successfully uploaded.");
+       	        deferred.resolve(response.data);
       }, function errorCallback(response) {
           deferred.reject(response);
       });
